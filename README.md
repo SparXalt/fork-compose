@@ -12,14 +12,10 @@ Copy or rename .env.sample to ~/forkdocker/.env and edit the paths & IP within a
 
 # Usage:
 ### All commands will run against all containers unless a single containername or a space seperated list of containernames is appended to the command.
-To create the stack of harvesters run `forkup`
-To stop the stack of harvesters run `forkstop`
-To destroy the stack of harvesters run `forkdown`
-To see the container logs run `forklogs`
-To recreate running containers run `forkrec`
-To pull the latest version of the container use `forkpull`
-To restart the containers `forkrestart`
-
-
-
-
+- To create the stack of harvesters run `forkup`
+- To stop the stack of harvesters run `forkstop`
+- To destroy the stack of harvesters run `forkdown`
+- To see the container logs run `forklogs`
+- To recreate running containers run `forkrec`
+- To pull the latest version of the container use `forkpull`
+- To restart the containers `forkrestart`
