@@ -1,0 +1,275 @@
+version: '3.4'
+x-restart: &restartpolicy unless-stopped
+x-plots: 
+  volumes: &vol
+    "/mnt/plots:/plots:ro"
+x-environment:
+  environment: &env
+    harvester: 'true'
+    farmer_address: $FARMER_IP
+    keys: 'copy'
+services:
+  avocado:
+    restart: *restartpolicy
+    container_name: avocado
+    volumes:
+      - *vol
+      - $APPDATA_PATH/avocado:/root/.avocado
+    environment:
+      <<: *env
+      farmer_port: '6868'
+      ca: '/root/.avocado/importca'
+    image: 'avocado:latest'
+  cactus:
+    restart: *restartpolicy
+    container_name: cactus
+    volumes:
+      - *vol
+      - $APPDATA_PATH/cactus:/root/.cactus
+    environment:
+      <<: *env
+      farmer_port: '11447'
+      ca: '/root/.cactus/importca'
+    image: 'cactus:latest'
+  cannabis:
+    restart: *restartpolicy
+    container_name: cannabis
+    volumes:
+      - *vol
+      - $APPDATA_PATH/cannabis:/root/.cannabis
+    environment:
+      <<: *env
+      farmer_port: '5547'
+      ca: '/root/.cannabis/importca'
+    image: 'cannabis:latest'
+  chaingreen:
+    restart: *restartpolicy
+    container_name: chaingreen
+    volumes:
+      - *vol
+      - $APPDATA_PATH/chaingreen:/root/.chaingreen
+    environment:
+      <<: *env
+      farmer_port: '8777'
+      ca: '/root/.chaingreen/importca'
+    image: 'ghcr.io/chaingreenorg/chaingreen:latest'
+  chiadogecoin:
+    restart: *restartpolicy
+    container_name: chiadogecoin
+    volumes:
+      - *vol
+      - $APPDATA_PATH/chiadogecoin:/root/.chiadoge
+    environment:
+      <<: *env
+      farmer_port: '6895'
+      ca: '/root/.chiadoge/importca'
+    image: 'chiadogecoin:latest'
+  dogechia:
+    restart: *restartpolicy
+    container_name: dogechia
+    volumes:
+      - *vol
+      - $APPDATA_PATH/dogechia:/root/.dogechia
+    environment:
+      <<: *env
+      farmer_port: '6969'
+      ca: '/root/.dogechia/importca'
+    image: 'dogechia:latest'
+  equality:
+    restart: *restartpolicy
+    container_name: equality
+    volumes:
+      - *vol
+      - $APPDATA_PATH/equality:/root/.equality
+    environment:
+      <<: *env
+      farmer_port: '9885'
+      ca: '/root/.equality/importca'
+    image: 'equality:latest'
+  flax:
+    restart: *restartpolicy
+    container_name: flax
+    volumes:
+      - *vol
+      - $APPDATA_PATH/flax:/root/.flax
+    environment:
+      <<: *env
+      farmer_port: '6885'
+      ca: '/root/.flax/importca'
+    image: 'flax:latest'
+  flora:
+    restart: *restartpolicy
+    container_name: flora
+    volumes:
+      - *vol
+      - $APPDATA_PATH/flora:/root/.flora
+    environment:
+      <<: *env
+      farmer_port: '18647'
+      ca: '/root/.flora/importca'
+    image: 'flora:latest'
+  goji:
+    restart: *restartpolicy
+    container_name: goji
+    volumes:
+      - *vol
+      - $APPDATA_PATH/goji:/root/.goji-blockchain
+    environment:
+      <<: *env
+      farmer_port: '7447'
+      ca: '/root/.goji-blockchain/importca'
+    image: 'goji:latest'
+  greendoge:
+    restart: *restartpolicy
+    container_name: greendoge
+    volumes:
+      - *vol
+      - $APPDATA_PATH/greendoge:/root/.greendoge
+    environment:
+      <<: *env
+      farmer_port: '6547'
+      ca: '/root/.greendoge/importca'
+    image: 'greendoge:latest'
+  hddcoin:
+    restart: *restartpolicy
+    container_name: hddcoin
+    volumes:
+      - *vol
+      - $APPDATA_PATH/hddcoin:/root/.hddcoin
+    environment:
+      <<: *env
+      farmer_port: '28447'
+      ca: '/root/.hddcoin/importca'
+    image: 'hddcoin:latest'
+  inan:
+    restart: *restartpolicy
+    container_name: inan
+    volumes:
+      - *vol
+      - $APPDATA_PATH/inan:/root/.inan
+    environment:
+      <<: *env
+      farmer_port: '37448'
+      ca: '/root/.inan/importca'
+    image: 'inan:latest'
+  kale:
+    restart: *restartpolicy
+    container_name: kale
+    volumes:
+      - *vol
+      - $APPDATA_PATH/kale:/root/.kale
+    environment:
+      <<: *env
+      farmer_port: '6335'
+      ca: '/root/.kale/importca'
+    image: 'kale:latest'
+  melati:
+    restart: *restartpolicy
+    container_name: melati
+    volumes:
+      - *vol
+      - $APPDATA_PATH/melati:/root/.melati
+    environment:
+      <<: *env
+      farmer_port: '2447'
+      ca: '/root/.melati/importca'
+    image: 'melati:latest'
+  sector:
+    restart: *restartpolicy
+    container_name: sector
+    volumes:
+      - *vol
+      - $APPDATA_PATH/sector:/root/.sector
+    environment:
+      <<: *env
+      farmer_port: '5447'
+      ca: '/root/.sector/importca'
+    image: 'sector:latest'
+  seno:
+    restart: *restartpolicy
+    container_name: seno
+    volumes:
+      - *vol
+      - $APPDATA_PATH/seno:/root/.seno2
+    environment:
+      <<: *env
+      farmer_port: '18447'
+      ca: '/root/.seno2/importca'
+    image: 'seno:latest'
+  silicoin:
+    restart: *restartpolicy
+    container_name: silicoin
+    volumes:
+      - *vol
+      - $APPDATA_PATH/silicoin:/root/.silicoin
+    environment:
+      <<: *env
+      farmer_port: '10447'
+      ca: '/root/.silicoin/importca'
+    image: 'silicoin:latest'
+  socks:
+    restart: *restartpolicy
+    container_name: socks
+    volumes:
+      - *vol
+      - $APPDATA_PATH/socks:/root/.socks
+    environment:
+      <<: *env
+      farmer_port: '58447'
+      ca: '/root/.socks/importca'
+    image: 'socks:latest'
+  spare:
+    restart: *restartpolicy
+    container_name: spare
+    volumes:
+      - *vol
+      - $APPDATA_PATH/spare:/root/.spare-blockchain
+    environment:
+      <<: *env
+      farmer_port: '9447'
+      ca: '/root/.spare-blockchain/importca'
+    image: 'spare:latest'
+  taco:
+    restart: *restartpolicy
+    container_name: taco
+    volumes:
+      - *vol
+      - $APPDATA_PATH/taco:/root/.taco
+    environment:
+      <<: *env
+      farmer_port: '18623'
+      ca: '/root/.taco/importca'
+    image: 'taco:latest'
+  tad:
+    restart: *restartpolicy
+    container_name: tad
+    volumes:
+      - *vol
+      - $APPDATA_PATH/tad:/root/.tad
+    environment:
+      <<: *env
+      farmer_port: '4447'
+      ca: '/root/.tad/importca'
+    image: 'tad:latest'
+  thyme:
+    restart: *restartpolicy
+    container_name: thyme
+    volumes:
+      - *vol
+      - $APPDATA_PATH/thyme:/root/.thyme
+    environment:
+      <<: *env
+      farmer_port: '16885'
+      ca: '/root/.thyme/importca'
+    image: 'thyme:latest'
+  wheat:
+    restart: *restartpolicy
+    container_name: wheat
+    volumes:
+      - *vol
+      - $APPDATA_PATH/wheat:/root/.wheat
+    environment:
+      <<: *env
+      farmer_port: '21447'
+      ca: '/root/.wheat/importca'
+    image: 'wheat:latest'
