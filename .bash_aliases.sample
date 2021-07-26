@@ -1,0 +1,9 @@
+# FORKS DOCKER COMPOSE
+alias forkrun='cd ~/forkdocker ; sudo docker-compose -f ~/forkdocker/fork-compose.yml '
+alias forklogs='cd ~/forkdocker ; sudo docker-compose -f ~/forkdocker/fork-compose.yml logs -tf --tail="50" '
+alias forkup='dcrun up -d'
+alias forkdown='dcrun down'
+alias forkrec='dcrun up -d --force-recreate'
+alias forkstop='dcrun stop'
+alias forkrestart='dcrun restart '
+alias forkpull='cd ~/forkdocker ; sudo docker-compose -f ~/forkdocker/fork-compose.yml  pull'
