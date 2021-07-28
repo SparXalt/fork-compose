@@ -31,6 +31,17 @@ services:
       farmer_port: '11447'
       ca: '/root/.cactus/importca'
     image: 'cactus:latest'
+  caldera:
+    restart: *restartpolicy
+    container_name: caldera
+    volumes:
+      - *vol
+      - $APPDATA_PATH/caldera:/root/.caldera
+    environment:
+      <<: *env
+      farmer_port: '8623'
+      ca: '/root/.caldera/importca'
+    image: 'caldera:latest'
   cannabis:
     restart: *restartpolicy
     container_name: cannabis
@@ -53,17 +64,6 @@ services:
       farmer_port: '8777'
       ca: '/root/.chaingreen/importca'
     image: 'ghcr.io/chaingreenorg/chaingreen:latest'
-  caldera:
-    restart: *restartpolicy
-    container_name: caldera
-    volumes:
-      - *vol
-      - $APPDATA_PATH/caldera:/root/.caldera
-    environment:
-      <<: *env
-      farmer_port: '8623'
-      ca: '/root/.caldera/importca'
-    image: 'caldera:latest'
   chiadogecoin:
     restart: *restartpolicy
     container_name: chiadogecoin
