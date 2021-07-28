@@ -4,11 +4,12 @@ x-common: &common
   restart: unless-stopped
   environment:
     keys: '/root/mnemonic.txt'
-x-volumes: 
-  - &mnemonic
-    $APPDATA_PATH/common-node/mnemonic.txt:/root/mnemonic.txt:ro
-  - &plot1
-    /mnt/plots:/plots:ro
+x-mnemonic: 
+  volumes: &mnemonic
+    "$APPDATA_PATH/common-node/mnemonic.txt:/root/mnemonic.txt:ro"
+x-plot1: 
+  volumes: &plot1
+    "/mnt/plots:/plots:ro"
 services:
   avocado:
     <<: *common
