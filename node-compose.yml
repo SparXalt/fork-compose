@@ -11,7 +11,7 @@ x-plot1:
   volumes: &plot1
     "/mnt/plots:/plots:ro"
 services:
-  avocado:
+  avocado-node:
     <<: *common
     container_name: avocado-node
     volumes:
@@ -23,7 +23,7 @@ services:
       - '7544:7544'
       - '6868:6868'
     image: 'avocado:latest'
-  cactus:
+  cactus-node:
     <<: *common
     container_name: cactus-node
     volumes:
@@ -35,7 +35,7 @@ services:
       - '11555:11555'
       - '11447:11447'
     image: 'cactus:latest'
-  caldera:
+  caldera-node:
     <<: *common
     container_name: caldera-node
     volumes:
@@ -47,7 +47,7 @@ services:
       - '8735:8735'
       - '8623:8623'
     image: 'caldera:latest'
-  cannabis:
+  cannabis-node:
     <<: *common
     container_name: cannabis-node
     volumes:
@@ -59,7 +59,7 @@ services:
       - '5540:5540'
       - '5547:5547'
     image: 'cannabis:latest'
-  chaingreen:
+  chaingreen-node:
     <<: *common
     container_name: chaingreen-node
     volumes:
@@ -86,7 +86,7 @@ services:
       - '8555:8555'
       - '8447:8447'
     image: 'ghcr.io/chia-network/chia:latest'
-  chiadogecoin:
+  chiadogecoin-node:
     <<: *common
     container_name: chiadogecoin-node
     volumes:
@@ -98,7 +98,7 @@ services:
       - '6795:6795'
       - '6895:6895'
     image: 'chiadogecoin:latest'
-  dogechia:
+  dogechia-node:
     <<: *common
     container_name: dogechia-node
     volumes:
@@ -110,7 +110,7 @@ services:
       - '6769:6769'
       - '6969:6969'
     image: 'dogechia:latest'
-  equality:
+  equality-node:
     <<: *common
     container_name: equality-node
     volumes:
@@ -122,7 +122,7 @@ services:
       - '9888:9888'
       - '9885:9885'
     image: 'equality:latest'
-  flax:
+  flax-node:
     <<: *common
     container_name: flax-node
     volumes:
@@ -134,7 +134,7 @@ services:
       - '6755:6755'
       - '6885:6885'
     image: 'flax:latest'
-  flora:
+  flora-node:
     <<: *common
     container_name: flora-node
     volumes:
@@ -146,7 +146,7 @@ services:
       - '18755:18755'
       - '18647:18647'
     image: 'flora:latest'
-  goji:
+  goji-node:
     <<: *common
     container_name: goji-node
     volumes:
@@ -158,7 +158,7 @@ services:
       - '7555:7555'
       - '7447:7447'
     image: 'goji:latest'
-  greendoge:
+  greendoge-node:
     <<: *common
     container_name: greendoge-node
     volumes:
@@ -170,7 +170,7 @@ services:
       - '6655:6655'
       - '6547:6547'
     image: 'greendoge:latest'
-  hddcoin:
+  hddcoin-node:
     <<: *common
     container_name: hddcoin-node
     volumes:
@@ -182,7 +182,7 @@ services:
       - '28555:28555'
       - '28447:28447'
     image: 'hddcoin:latest'
-  inan:
+  inan-node:
     <<: *common
     container_name: inan-node
     volumes:
@@ -194,7 +194,7 @@ services:
       - '35558:35558'
       - '37448:37448'
     image: 'inan:latest'
-  kale:
+  kale-node:
     <<: *common
     container_name: kale-node
     volumes:
@@ -206,7 +206,7 @@ services:
       - '6355:6355'
       - '6335:6335'
     image: 'kale:latest'
-  melati:
+  melati-node:
     <<: *common
     container_name: melati-node
     volumes:
@@ -218,7 +218,7 @@ services:
       - '2555:2555'
       - '2447:2447'
     image: 'melati:latest'
-  sector:
+  sector-node:
     <<: *common
     container_name: sector-node
     volumes:
@@ -230,7 +230,7 @@ services:
       - '5555:5555'
       - '5447:5447'
     image: 'sector:latest'
-  seno:
+  seno-node:
     <<: *common
     container_name: seno-node
     volumes:
@@ -242,7 +242,7 @@ services:
       - '18555:18555'
       - '18447:18447'
     image: 'seno:latest'
-  silicoin:
+  silicoin-node:
     <<: *common
     container_name: silicoin-node
     volumes:
@@ -254,7 +254,7 @@ services:
       - '10555:10555'
       - '10447:10447'
     image: 'silicoin:latest'
-  socks:
+  socks-node:
     <<: *common
     container_name: socks-node
     volumes:
@@ -266,7 +266,7 @@ services:
       - '58455:58455'
       - '58447:58447'
     image: 'socks:latest'
-  spare:
+  spare-node:
     <<: *common
     container_name: spare-node
     volumes:
@@ -278,7 +278,7 @@ services:
       - '9555:9555'
       - '9447:9447'
     image: 'spare:latest'
-  taco:
+  taco-node:
     <<: *common
     container_name: taco-node
     volumes:
@@ -290,7 +290,7 @@ services:
       - '18735:18735'
       - '18623:18623'
     image: 'taco:latest'
-  tad:
+  tad-node:
     <<: *common
     container_name: tad-node
     volumes:
@@ -302,7 +302,7 @@ services:
       - '4555:4555'
       - '4447:4447'
     image: 'tad:latest'
-  thyme:
+  thyme-node:
     <<: *common
     container_name: thyme-node
     volumes:
@@ -314,7 +314,7 @@ services:
       - '16755:16755'
       - '16885:16885'
     image: 'thyme:latest'
-  wheat:
+  wheat-node:
     <<: *common
     container_name: wheat-node
     volumes:
