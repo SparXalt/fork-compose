@@ -64,6 +64,17 @@ services:
       farmer_port: '8777'
       ca: '/root/.chaingreen/importca'
     image: 'ghcr.io/chaingreenorg/chaingreen:latest'
+  chia:
+      restart: *restartpolicy
+      container_name: chia
+      volumes:
+        - *vol
+        - $APPDATA_PATH/chia:/root/.chia
+      environment:
+        <<: *env
+        farmer_port: '6895'
+        ca: '/root/.chia/importca'
+      image: 'ghcr.io/chia-network/chia:latest'
   chiadogecoin:
     restart: *restartpolicy
     container_name: chiadogecoin
