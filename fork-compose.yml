@@ -1,7 +1,7 @@
 version: '3.4'
 x-restart: &restartpolicy unless-stopped
 x-plots: 
-  volumes: &vol
+  volumes: &plot1
     "/mnt/plots:/plots:ro"
 x-environment:
   environment: &env
@@ -13,7 +13,7 @@ services:
     restart: *restartpolicy
     container_name: avocado
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/avocado:/root/.avocado
     environment:
       <<: *env
@@ -24,7 +24,7 @@ services:
     restart: *restartpolicy
     container_name: cactus
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/cactus:/root/.cactus
     environment:
       <<: *env
@@ -35,7 +35,7 @@ services:
     restart: *restartpolicy
     container_name: caldera
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/caldera:/root/.caldera
     environment:
       <<: *env
@@ -46,7 +46,7 @@ services:
     restart: *restartpolicy
     container_name: cannabis
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/cannabis:/root/.cannabis
     environment:
       <<: *env
@@ -57,7 +57,7 @@ services:
     restart: *restartpolicy
     container_name: chaingreen
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/chaingreen:/root/.chaingreen
     environment:
       <<: *env
@@ -68,7 +68,7 @@ services:
       restart: *restartpolicy
       container_name: chia
       volumes:
-        - *vol
+        - *plot1
         - $APPDATA_PATH/chia:/root/.chia
       environment:
         <<: *env
@@ -79,7 +79,7 @@ services:
     restart: *restartpolicy
     container_name: chiadogecoin
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/chiadogecoin:/root/.chiadoge
     environment:
       <<: *env
@@ -90,7 +90,7 @@ services:
     restart: *restartpolicy
     container_name: dogechia
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/dogechia:/root/.dogechia
     environment:
       <<: *env
@@ -101,7 +101,7 @@ services:
     restart: *restartpolicy
     container_name: equality
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/equality:/root/.equality
     environment:
       <<: *env
@@ -112,7 +112,7 @@ services:
     restart: *restartpolicy
     container_name: flax
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/flax:/root/.flax
     environment:
       <<: *env
@@ -123,7 +123,7 @@ services:
     restart: *restartpolicy
     container_name: flora
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/flora:/root/.flora
     environment:
       <<: *env
@@ -134,7 +134,7 @@ services:
     restart: *restartpolicy
     container_name: goji
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/goji:/root/.goji-blockchain
     environment:
       <<: *env
@@ -145,7 +145,7 @@ services:
     restart: *restartpolicy
     container_name: greendoge
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/greendoge:/root/.greendoge
     environment:
       <<: *env
@@ -156,7 +156,7 @@ services:
     restart: *restartpolicy
     container_name: hddcoin
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/hddcoin:/root/.hddcoin
     environment:
       <<: *env
@@ -167,7 +167,7 @@ services:
     restart: *restartpolicy
     container_name: inan
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/inan:/root/.inan
     environment:
       <<: *env
@@ -178,7 +178,7 @@ services:
     restart: *restartpolicy
     container_name: kale
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/kale:/root/.kale
     environment:
       <<: *env
@@ -189,7 +189,7 @@ services:
     restart: *restartpolicy
     container_name: melati
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/melati:/root/.melati
     environment:
       <<: *env
@@ -200,7 +200,7 @@ services:
     restart: *restartpolicy
     container_name: sector
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/sector:/root/.sector
     environment:
       <<: *env
@@ -211,7 +211,7 @@ services:
     restart: *restartpolicy
     container_name: seno
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/seno:/root/.seno2
     environment:
       <<: *env
@@ -222,7 +222,7 @@ services:
     restart: *restartpolicy
     container_name: silicoin
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/silicoin:/root/.silicoin
     environment:
       <<: *env
@@ -233,7 +233,7 @@ services:
     restart: *restartpolicy
     container_name: socks
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/socks:/root/.socks
     environment:
       <<: *env
@@ -244,7 +244,7 @@ services:
     restart: *restartpolicy
     container_name: spare
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/spare:/root/.spare-blockchain
     environment:
       <<: *env
@@ -255,7 +255,7 @@ services:
     restart: *restartpolicy
     container_name: taco
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/taco:/root/.taco
     environment:
       <<: *env
@@ -266,7 +266,7 @@ services:
     restart: *restartpolicy
     container_name: tad
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/tad:/root/.tad
     environment:
       <<: *env
@@ -277,7 +277,7 @@ services:
     restart: *restartpolicy
     container_name: thyme
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/thyme:/root/.thyme
     environment:
       <<: *env
@@ -288,7 +288,7 @@ services:
     restart: *restartpolicy
     container_name: wheat
     volumes:
-      - *vol
+      - *plot1
       - $APPDATA_PATH/wheat:/root/.wheat
     environment:
       <<: *env
