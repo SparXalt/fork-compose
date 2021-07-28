@@ -1,10 +1,9 @@
 version: '3.4'
-x-common: 
-  common: &common
-    network_mode: host
-    restart: unless-stopped
-    environment:
-      keys: '/root/mnemonic.txt'
+x-common: &common
+  network_mode: host
+  restart: unless-stopped
+  environment:
+    keys: '/root/mnemonic.txt'
 x-mnemonic: 
   volumes: &mnemonic
     "$APPDATA_PATH/common-node/mnemonic.txt:/root/mnemonic.txt:ro"
