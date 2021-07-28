@@ -72,7 +72,7 @@ services:
         - $APPDATA_PATH/chia:/root/.chia
       environment:
         <<: *env
-        farmer_port: '6895'
+        farmer_port: '8447'
         ca: '/root/.chia/importca'
       image: 'ghcr.io/chia-network/chia:latest'
   chiadogecoin:
