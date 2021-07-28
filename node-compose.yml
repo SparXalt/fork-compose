@@ -72,7 +72,10 @@ services:
       '8777:8777'
     image: 'ghcr.io/chaingreenorg/chaingreen:latest'
   chia:
-    <<: *common
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      keys: '/root/mnemonic.txt'
     container_name: chia-node
     volumes:
       - *mnemonic
