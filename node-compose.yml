@@ -12,8 +12,8 @@ x-plot1:
     "/mnt/plots:/plots:ro"
 services:
   avocado:
-    <<: *common
     container_name: avocado-node
+    <<: *common
     volumes:
       - *mnemonic
       - *plot1
