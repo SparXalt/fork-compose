@@ -130,8 +130,8 @@ services:
       - *plot1
       - $APPDATA_PATH/flax-node:/root/.flax
     ports:
-      - '6885:6885'
       - '6888:6888'
+      - '6755:6755'
       - '6885:6885'
     image: 'flax:latest'
   flora:
@@ -154,8 +154,8 @@ services:
       - *plot1
       - $APPDATA_PATH/goji-node:/root/.goji-blockchain
     ports:
-      - '7447:7447'
       - '7444:7444'
+      - '7555:7555'
       - '7447:7447'
     image: 'goji:latest'
   greendoge:
@@ -202,8 +202,8 @@ services:
       - *plot1
       - $APPDATA_PATH/kale-node:/root/.kale
     ports:
-      - '6335:6335'
       - '6333:6333'
+      - '6355:6355'
       - '6335:6335'
     image: 'kale:latest'
   melati:
