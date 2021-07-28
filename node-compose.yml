@@ -4,16 +4,18 @@ x-common: &common
   restart: unless-stopped
   environment:
     keys: '/root/mnemonic.txt'
-x-plots: 
-  volumes: &vols
-    - $APPDATA_PATH/common-node/mnemonic.txt:/root/mnemonic.txt:ro
-    - /mnt/plots:/plots:ro
+x-volumes: 
+  - &mnemonic
+    $APPDATA_PATH/common-node/mnemonic.txt:/root/mnemonic.txt:ro
+  - &plot1
+    /mnt/plots:/plots:ro
 services:
   avocado:
     <<: *common
     container_name: avocado-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/avocado-node:/root/.avocado
     ports:
       '6865:6865'
@@ -24,7 +26,8 @@ services:
     <<: *common
     container_name: cactus-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/cactus-node:/root/.cactus
     ports:
       '11444:11444'
@@ -35,7 +38,8 @@ services:
     <<: *common
     container_name: caldera-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/caldera-node:/root/.caldera
     ports:
       '8630:8630'
@@ -46,7 +50,8 @@ services:
     <<: *common
     container_name: cannabis-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/cannabis-node:/root/.cannabis
     ports:
       '5444:5444'
@@ -57,7 +62,8 @@ services:
     <<: *common
     container_name: chaingreen-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/chaingreen-node:/root/.chaingreen
     ports:
       '8744:8744'
@@ -68,7 +74,8 @@ services:
     <<: *common
     container_name: chia-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/chia-node:/root/.chia
     ports:
       '8444:8444'
@@ -79,7 +86,8 @@ services:
     <<: *common
     container_name: chiadogecoin-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/chiadogecoin-node:/root/.chiadoge
     ports:
       '6899:6899'
@@ -90,7 +98,8 @@ services:
     <<: *common
     container_name: dogechia-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/dogechia-node:/root/.dogechia
     ports:
       '42069:42069'
@@ -101,7 +110,8 @@ services:
     <<: *common
     container_name: equality-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/equality-node:/root/.equality
     ports:
       '9755:9755'
@@ -112,7 +122,8 @@ services:
     <<: *common
     container_name: flax-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/flax-node:/root/.flax
     ports:
       '6885:6885'
@@ -123,7 +134,8 @@ services:
     <<: *common
     container_name: flora-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/flora-node:/root/.flora
     ports:
       '18644:18644'
@@ -134,7 +146,8 @@ services:
     <<: *common
     container_name: goji-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/goji-node:/root/.goji-blockchain
     ports:
       '7447:7447'
@@ -145,7 +158,8 @@ services:
     <<: *common
     container_name: greendoge-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/greendoge-node:/root/.greendoge
     ports:
       '6544:6544'
@@ -156,7 +170,8 @@ services:
     <<: *common
     container_name: hddcoin-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/hddcoin-node:/root/.hddcoin
     ports:
       '28444:28444'
@@ -167,7 +182,8 @@ services:
     <<: *common
     container_name: inan-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/inan-node:/root/.inan
     ports:
       '34448:34448'
@@ -178,7 +194,8 @@ services:
     <<: *common
     container_name: kale-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/kale-node:/root/.kale
     ports:
       '6335:6335'
@@ -189,7 +206,8 @@ services:
     <<: *common
     container_name: melati-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/melati-node:/root/.melati
     ports:
       '2444:2444'
@@ -200,7 +218,8 @@ services:
     <<: *common
     container_name: sector-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/sector-node:/root/.sector
     ports:
       '5765:5765'
@@ -211,7 +230,8 @@ services:
     <<: *common
     container_name: seno-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/seno-node:/root/.seno2
     ports:
       '18444:18444'
@@ -222,7 +242,8 @@ services:
     <<: *common
     container_name: silicoin-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/silicoin-node:/root/.silicoin
     ports:
       '10444:10444'
@@ -233,7 +254,8 @@ services:
     <<: *common
     container_name: socks-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/socks-node:/root/.socks
     ports:
       '58444:58444'
@@ -244,7 +266,8 @@ services:
     <<: *common
     container_name: spare-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/spare-node:/root/.spare-blockchain
     ports:
       '9444:9444'
@@ -255,7 +278,8 @@ services:
     <<: *common
     container_name: taco-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/taco-node:/root/.taco
     ports:
       '18620:18620'
@@ -266,7 +290,8 @@ services:
     <<: *common
     container_name: tad-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/tad-node:/root/.tad
     ports:
       '4044:4044'
@@ -277,7 +302,8 @@ services:
     <<: *common
     container_name: thyme-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/thyme-node:/root/.thyme
     ports:
       '16988:16988'
@@ -288,7 +314,8 @@ services:
     <<: *common
     container_name: wheat-node
     volumes:
-      <<: *vols
+      - *mnemonic
+      - *plot1
       - $APPDATA_PATH/wheat-node:/root/.wheat
     ports:
       '21333:21333'
