@@ -12,16 +12,16 @@ x-plot1:
     "/mnt/plots:/plots:ro"
 services:
   avocado:
-    container_name: avocado-node
     <<: *common
+    container_name: avocado-node
     volumes:
       - *mnemonic
       - *plot1
       - $APPDATA_PATH/avocado-node:/root/.avocado
     ports:
-      '6865:6865'
-      '7544:7544'
-      '6868:6868'
+      - '6865:6865'
+      - '7544:7544'
+      - '6868:6868'
     image: 'avocado:latest'
   cactus:
     <<: *common
@@ -31,9 +31,9 @@ services:
       - *plot1
       - $APPDATA_PATH/cactus-node:/root/.cactus
     ports:
-      '11444:11444'
-      '11555:11555'
-      '11447:11447'
+      - '11444:11444'
+      - '11555:11555'
+      - '11447:11447'
     image: 'cactus:latest'
   caldera:
     <<: *common
@@ -43,9 +43,9 @@ services:
       - *plot1
       - $APPDATA_PATH/caldera-node:/root/.caldera
     ports:
-      '8630:8630'
-      '8735:8735'
-      '8623:8623'
+      - '8630:8630'
+      - '8735:8735'
+      - '8623:8623'
     image: 'caldera:latest'
   cannabis:
     <<: *common
@@ -55,9 +55,9 @@ services:
       - *plot1
       - $APPDATA_PATH/cannabis-node:/root/.cannabis
     ports:
-      '5444:5444'
-      '5540:5540'
-      '5547:5547'
+      - '5444:5444'
+      - '5540:5540'
+      - '5547:5547'
     image: 'cannabis:latest'
   chaingreen:
     <<: *common
@@ -67,9 +67,9 @@ services:
       - *plot1
       - $APPDATA_PATH/chaingreen-node:/root/.chaingreen
     ports:
-      '8744:8744'
-      '8755:8755'
-      '8777:8777'
+      - '8744:8744'
+      - '8755:8755'
+      - '8777:8777'
     image: 'ghcr.io/chaingreenorg/chaingreen:latest'
   chia:
     network_mode: host
@@ -82,9 +82,9 @@ services:
       - *plot1
       - $APPDATA_PATH/chia-node:/root/.chia
     ports:
-      '8444:8444'
-      '8555:8555'
-      '8447:8447'
+      - '8444:8444'
+      - '8555:8555'
+      - '8447:8447'
     image: 'ghcr.io/chia-network/chia:latest'
   chiadogecoin:
     <<: *common
@@ -94,9 +94,9 @@ services:
       - *plot1
       - $APPDATA_PATH/chiadogecoin-node:/root/.chiadoge
     ports:
-      '6899:6899'
-      '6795:6795'
-      '6895:6895'
+      - '6899:6899'
+      - '6795:6795'
+      - '6895:6895'
     image: 'chiadogecoin:latest'
   dogechia:
     <<: *common
@@ -106,9 +106,9 @@ services:
       - *plot1
       - $APPDATA_PATH/dogechia-node:/root/.dogechia
     ports:
-      '42069:42069'
-      '6769:6769'
-      '6969:6969'
+      - '42069:42069'
+      - '6769:6769'
+      - '6969:6969'
     image: 'dogechia:latest'
   equality:
     <<: *common
@@ -118,9 +118,9 @@ services:
       - *plot1
       - $APPDATA_PATH/equality-node:/root/.equality
     ports:
-      '9755:9755'
-      '9888:9888'
-      '9885:9885'
+      - '9755:9755'
+      - '9888:9888'
+      - '9885:9885'
     image: 'equality:latest'
   flax:
     <<: *common
@@ -130,9 +130,9 @@ services:
       - *plot1
       - $APPDATA_PATH/flax-node:/root/.flax
     ports:
-      '6885:6885'
-      '6888:6888'
-      '6885:6885'
+      - '6885:6885'
+      - '6888:6888'
+      - '6885:6885'
     image: 'flax:latest'
   flora:
     <<: *common
@@ -142,9 +142,9 @@ services:
       - *plot1
       - $APPDATA_PATH/flora-node:/root/.flora
     ports:
-      '18644:18644'
-      '18755:18755'
-      '18647:18647'
+      - '18644:18644'
+      - '18755:18755'
+      - '18647:18647'
     image: 'flora:latest'
   goji:
     <<: *common
@@ -154,9 +154,9 @@ services:
       - *plot1
       - $APPDATA_PATH/goji-node:/root/.goji-blockchain
     ports:
-      '7447:7447'
-      '7444:7444'
-      '7447:7447'
+      - '7447:7447'
+      - '7444:7444'
+      - '7447:7447'
     image: 'goji:latest'
   greendoge:
     <<: *common
@@ -166,9 +166,9 @@ services:
       - *plot1
       - $APPDATA_PATH/greendoge-node:/root/.greendoge
     ports:
-      '6544:6544'
-      '6655:6655'
-      '6547:6547'
+      - '6544:6544'
+      - '6655:6655'
+      - '6547:6547'
     image: 'greendoge:latest'
   hddcoin:
     <<: *common
@@ -178,9 +178,9 @@ services:
       - *plot1
       - $APPDATA_PATH/hddcoin-node:/root/.hddcoin
     ports:
-      '28444:28444'
-      '28555:28555'
-      '28447:28447'
+      - '28444:28444'
+      - '28555:28555'
+      - '28447:28447'
     image: 'hddcoin:latest'
   inan:
     <<: *common
@@ -190,9 +190,9 @@ services:
       - *plot1
       - $APPDATA_PATH/inan-node:/root/.inan
     ports:
-      '34448:34448'
-      '35558:35558'
-      '37448:37448'
+      - '34448:34448'
+      - '35558:35558'
+      - '37448:37448'
     image: 'inan:latest'
   kale:
     <<: *common
@@ -202,9 +202,9 @@ services:
       - *plot1
       - $APPDATA_PATH/kale-node:/root/.kale
     ports:
-      '6335:6335'
-      '6333:6333'
-      '6335:6335'
+      - '6335:6335'
+      - '6333:6333'
+      - '6335:6335'
     image: 'kale:latest'
   melati:
     <<: *common
@@ -214,9 +214,9 @@ services:
       - *plot1
       - $APPDATA_PATH/melati-node:/root/.melati
     ports:
-      '2444:2444'
-      '2555:2555'
-      '2447:2447'
+      - '2444:2444'
+      - '2555:2555'
+      - '2447:2447'
     image: 'melati:latest'
   sector:
     <<: *common
@@ -226,9 +226,9 @@ services:
       - *plot1
       - $APPDATA_PATH/sector-node:/root/.sector
     ports:
-      '5765:5765'
-      '5555:5555'
-      '5447:5447'
+      - '5765:5765'
+      - '5555:5555'
+      - '5447:5447'
     image: 'sector:latest'
   seno:
     <<: *common
@@ -238,9 +238,9 @@ services:
       - *plot1
       - $APPDATA_PATH/seno-node:/root/.seno2
     ports:
-      '18444:18444'
-      '18555:18555'
-      '18447:18447'
+      - '18444:18444'
+      - '18555:18555'
+      - '18447:18447'
     image: 'seno:latest'
   silicoin:
     <<: *common
@@ -250,9 +250,9 @@ services:
       - *plot1
       - $APPDATA_PATH/silicoin-node:/root/.silicoin
     ports:
-      '10444:10444'
-      '10555:10555'
-      '10447:10447'
+      - '10444:10444'
+      - '10555:10555'
+      - '10447:10447'
     image: 'silicoin:latest'
   socks:
     <<: *common
@@ -262,9 +262,9 @@ services:
       - *plot1
       - $APPDATA_PATH/socks-node:/root/.socks
     ports:
-      '58444:58444'
-      '58455:58455'
-      '58447:58447'
+      - '58444:58444'
+      - '58455:58455'
+      - '58447:58447'
     image: 'socks:latest'
   spare:
     <<: *common
@@ -274,9 +274,9 @@ services:
       - *plot1
       - $APPDATA_PATH/spare-node:/root/.spare-blockchain
     ports:
-      '9444:9444'
-      '9555:9555'
-      '9447:9447'
+      - '9444:9444'
+      - '9555:9555'
+      - '9447:9447'
     image: 'spare:latest'
   taco:
     <<: *common
@@ -286,9 +286,9 @@ services:
       - *plot1
       - $APPDATA_PATH/taco-node:/root/.taco
     ports:
-      '18620:18620'
-      '18735:18735'
-      '18623:18623'
+      - '18620:18620'
+      - '18735:18735'
+      - '18623:18623'
     image: 'taco:latest'
   tad:
     <<: *common
@@ -298,9 +298,9 @@ services:
       - *plot1
       - $APPDATA_PATH/tad-node:/root/.tad
     ports:
-      '4044:4044'
-      '4555:4555'
-      '4447:4447'
+      - '4044:4044'
+      - '4555:4555'
+      - '4447:4447'
     image: 'tad:latest'
   thyme:
     <<: *common
@@ -310,9 +310,9 @@ services:
       - *plot1
       - $APPDATA_PATH/thyme-node:/root/.thyme
     ports:
-      '16988:16988'
-      '16755:16755'
-      '16885:16885'
+      - '16988:16988'
+      - '16755:16755'
+      - '16885:16885'
     image: 'thyme:latest'
   wheat:
     <<: *common
@@ -322,7 +322,7 @@ services:
       - *plot1
       - $APPDATA_PATH/wheat-node:/root/.wheat
     ports:
-      '21333:21333'
-      '21555:21555'
-      '21447:21447'
+      - '21333:21333'
+      - '21555:21555'
+      - '21447:21447'
     image: 'wheat:latest'
