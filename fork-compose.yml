@@ -229,6 +229,17 @@ services:
       farmer_port: '18447'
       ca: '/root/.seno2/importca'
     image: 'seno:latest'
+    shamrock:
+      restart: *restartpolicy
+      container_name: shamrock
+      volumes:
+        - *plot1
+        - $APPDATA_PATH/shamrock:/root/.shamrock
+      environment:
+        <<: *env
+        farmer_port: '9337'
+        ca: '/root/.shamrock/importca'
+      image: 'shamrock:latest'
   silicoin:
     restart: *restartpolicy
     container_name: silicoin
