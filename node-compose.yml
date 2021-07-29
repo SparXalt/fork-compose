@@ -11,6 +11,18 @@ x-plot1:
   volumes: &plot1
     "/mnt/plots:/plots:ro"
 services:
+  apple-node:
+    <<: *common
+    container_name: apple-node
+    volumes:
+      - *mnemonic
+      - *plot1
+      - $APPDATA_PATH/apple-node:/root/.apple
+    ports:
+      - '26666:26666'
+      - '26665:26665'
+      - '26667:26667'
+    image: 'apple:latest'
   avocado-node:
     <<: *common
     container_name: avocado-node
