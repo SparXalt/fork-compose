@@ -9,6 +9,17 @@ x-environment:
     farmer_address: $FARMER_IP
     keys: 'copy'
 services:
+  apple:
+    restart: *restartpolicy
+    container_name: apple
+    volumes:
+      - *plot1
+      - $APPDATA_PATH/apple:/root/.apple
+    environment:
+      <<: *env
+      farmer_port: '26667'
+      ca: '/root/.apple/importca'
+    image: 'apple:latest'
   avocado:
     restart: *restartpolicy
     container_name: avocado
