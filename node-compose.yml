@@ -1,5 +1,9 @@
 version: '3.4'
 x-common: &common
+  deploy:
+    resources:
+        limits:
+          cpus: 2
   network_mode: host
   restart: unless-stopped
   environment:
