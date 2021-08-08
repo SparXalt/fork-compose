@@ -1,6 +1,5 @@
 version: '3.4'
 x-common: &common
-  cpus: '2'
   network_mode: host
   restart: unless-stopped
   environment:
