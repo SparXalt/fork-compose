@@ -97,6 +97,17 @@ services:
       farmer_port: '6895'
       ca: '/root/.chiadoge/importca'
     image: 'chiadogecoin:latest'
+  cryptodoge:
+    restart: *restartpolicy
+    container_name: cryptodoge
+    volumes:
+      - *plot1
+      - $APPDATA_PATH/cryptodoge:/root/.cryptodoge
+    environment:
+      <<: *env
+      farmer_port: '16895'
+      ca: '/root/.cryptodoge/importca'
+    image: 'cryptodoge:latest'
   dogechia:
     restart: *restartpolicy
     container_name: dogechia

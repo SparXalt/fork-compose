@@ -107,6 +107,18 @@ services:
       - '6795:6795'
       - '6895:6895'
     image: 'chiadogecoin:latest'
+  cryptodoge-node:
+    <<: *common
+    container_name: cryptodoge-node
+    volumes:
+      - *mnemonic
+      - *plot1
+      - $APPDATA_PATH/cryptodoge-node:/root/.cryptodoge
+    ports:
+      - '15994:15994'
+      - '16795:16795'
+      - '16895:16895'
+    image: 'cryptodoge:latest'
   dogechia-node:
     <<: *common
     container_name: dogechia-node
