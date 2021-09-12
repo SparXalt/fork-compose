@@ -263,18 +263,6 @@ services:
       - '18555:18555'
       - '18447:18447'
     image: 'seno:latest'
-  shamrock-node:
-    <<: *common
-    container_name: shamrock-node
-    volumes:
-      - *mnemonic
-      - *plot1
-      - $APPDATA_PATH/shamrock-node:/root/.shamrock
-    ports:
-      - '9359:9359'
-      - '9551:9551'
-      - '9337:9337'
-    image: 'shamrock:latest'
   silicoin-node:
     <<: *common
     container_name: silicoin-node
