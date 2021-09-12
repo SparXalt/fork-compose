@@ -86,17 +86,6 @@ services:
       farmer_port: '8447'
       ca: '/root/.chia/importca'
     image: 'ghcr.io/chia-network/chia:latest'
-  chiadogecoin:
-    restart: *restartpolicy
-    container_name: chiadogecoin
-    volumes:
-      - *plot1
-      - $APPDATA_PATH/chiadogecoin:/root/.chiadoge
-    environment:
-      <<: *env
-      farmer_port: '6895'
-      ca: '/root/.chiadoge/importca'
-    image: 'chiadogecoin:latest'
   cryptodoge:
     restart: *restartpolicy
     container_name: cryptodoge
@@ -240,17 +229,6 @@ services:
       farmer_port: '18447'
       ca: '/root/.seno2/importca'
     image: 'seno:latest'
-  shamrock:
-    restart: *restartpolicy
-    container_name: shamrock
-    volumes:
-      - *plot1
-      - $APPDATA_PATH/shamrock:/root/.shamrock
-    environment:
-      <<: *env
-      farmer_port: '9337'
-      ca: '/root/.shamrock/importca'
-    image: 'shamrock:latest'
   silicoin:
     restart: *restartpolicy
     container_name: silicoin

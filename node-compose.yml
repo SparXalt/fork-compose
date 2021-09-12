@@ -95,18 +95,6 @@ services:
       - '8555:8555'
       - '8447:8447'
     image: 'ghcr.io/chia-network/chia:latest'
-  chiadogecoin-node:
-    <<: *common
-    container_name: chiadogecoin-node
-    volumes:
-      - *mnemonic
-      - *plot1
-      - $APPDATA_PATH/chiadogecoin-node:/root/.chiadoge
-    ports:
-      - '6899:6899'
-      - '6795:6795'
-      - '6895:6895'
-    image: 'chiadogecoin:latest'
   cryptodoge-node:
     <<: *common
     container_name: cryptodoge-node
