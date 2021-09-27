@@ -93,8 +93,7 @@ services:
     volumes:
       - *mnemonic
       - *plot1
-      - $APPDATA_PATH/farmr:/data
-      - $APPDATA_PATH/chia-node:/data/chia
+      - $APPDATA_PATH/chia-node:/data
     ports:
       - '8444:8444'
       - '8555:8555'

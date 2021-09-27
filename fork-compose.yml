@@ -80,8 +80,7 @@ services:
     container_name: chia
     volumes:
       - *plot1
-      - $APPDATA_PATH/farmr:/data
-      - $APPDATA_PATH/chia:/data/chia
+      - $APPDATA_PATH/chia:/data
     environment:
       <<: *env
       farmr: harvester
