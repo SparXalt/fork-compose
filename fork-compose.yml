@@ -81,7 +81,7 @@ services:
     volumes:
       - *plot1
       - $APPDATA_PATH/farmr:/data
-      - $APPDATA_PATH/chia:/data/.chia
+      - $APPDATA_PATH/chia:/data/chia
     environment:
       <<: *env
       farmr: harvester
