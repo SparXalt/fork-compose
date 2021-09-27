@@ -84,17 +84,22 @@ services:
       - '8777:8777'
     image: 'ghcr.io/chaingreenorg/chaingreen:latest'
   chia-node:
-    <<: *common
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      keys: '/root/mnemonic.txt'
+      farmr: farmer
     container_name: chia-node
     volumes:
       - *mnemonic
       - *plot1
-      - $APPDATA_PATH/chia-node:/root/.chia
+      - $APPDATA_PATH/farmr:/data
+      - $APPDATA_PATH/chia-node:/data/chia
     ports:
       - '8444:8444'
       - '8555:8555'
       - '8447:8447'
-    image: 'ghcr.io/chia-network/chia:latest'
+    image: 'ixsystems/chia-docker:latest'
   cryptodoge-node:
     <<: *common
     container_name: cryptodoge-node

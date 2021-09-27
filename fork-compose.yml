@@ -80,12 +80,14 @@ services:
     container_name: chia
     volumes:
       - *plot1
-      - $APPDATA_PATH/chia:/root/.chia
+      - $APPDATA_PATH/farmr:/data
+      - $APPDATA_PATH/chia:/data/.chia
     environment:
       <<: *env
+      farmr: harvester
       farmer_port: '8447'
       ca: '/root/.chia/importca'
-    image: 'ghcr.io/chia-network/chia:latest'
+    image: 'ixsystems/chia-docker:latest'
   cryptodoge:
     restart: *restartpolicy
     container_name: cryptodoge
