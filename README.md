@@ -27,3 +27,17 @@ Copy or rename .env.sample to ~/fork-compose/.env and edit the paths & IP within
 - To recreate running harvester containers run `forkrec`
 - To pull the latest version of the harvester container use `forkpull`
 - To restart the harvester containers `forkrestart`
+
+# Repository Rename
+### If you downlodaded this repo when it was called forkdocker you will need to runn the following commands to update the name to fork-compose
+run either forkdown or nodedown depending on your setup then the following commands:
+```
+cd ~
+sed -i 's/forkdocker/fork-compose/g' .bash_aliases
+source ~/.bashrc
+mv ~/forkdocker ~/fork-compose
+cd ~/fork-compose
+git remote set-url origin https://github.com/SparXalt/fork-compose.git
+git pull
+```
+then run forkup or nodeup
