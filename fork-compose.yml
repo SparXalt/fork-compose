@@ -174,7 +174,7 @@ services:
       <<: *env
       farmer_port: '28447'
       ca: '/root/.hddcoin/importca'
-    image: 'hddcoin:latest'
+    image: 'ghcr.io/sparxalt/hddcoin-docker:main'
   inan:
     restart: *restartpolicy
     container_name: inan
