@@ -130,7 +130,7 @@ services:
       <<: *env
       farmer_port: '18647'
       ca: '/root/.flora/importca'
-    image: 'flora:latest'
+    image: 'ghcr.io/sparxalt/flora-docker:latest'
   goji:
     restart: *restartpolicy
     container_name: goji

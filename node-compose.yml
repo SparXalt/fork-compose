@@ -146,7 +146,7 @@ services:
       - '18644:18644'
       - '18755:18755'
       - '18647:18647'
-    image: 'flora:latest'
+    image: 'ghcr.io/sparxalt/flora-docker:latest'
   goji-node:
     <<: *common
     container_name: goji-node
