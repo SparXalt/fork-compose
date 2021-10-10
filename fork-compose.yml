@@ -42,17 +42,6 @@ services:
       farmer_port: '11447'
       ca: '/root/.cactus/importca'
     image: 'cactus:latest'
-  caldera:
-    restart: *restartpolicy
-    container_name: caldera
-    volumes:
-      - *plot1
-      - $APPDATA_PATH/caldera:/root/.caldera
-    environment:
-      <<: *env
-      farmer_port: '8623'
-      ca: '/root/.caldera/importca'
-    image: 'caldera:latest'
   cannabis:
     restart: *restartpolicy
     container_name: cannabis
@@ -175,17 +164,6 @@ services:
       farmer_port: '28447'
       ca: '/root/.hddcoin/importca'
     image: 'ghcr.io/sparxalt/hddcoin-docker:latest'
-  inan:
-    restart: *restartpolicy
-    container_name: inan
-    volumes:
-      - *plot1
-      - $APPDATA_PATH/inan:/root/.inan
-    environment:
-      <<: *env
-      farmer_port: '37448'
-      ca: '/root/.inan/importca'
-    image: 'inan:latest'
   kale:
     restart: *restartpolicy
     container_name: kale

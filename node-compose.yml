@@ -47,18 +47,6 @@ services:
       - '11555:11555'
       - '11447:11447'
     image: 'cactus:latest'
-  caldera-node:
-    <<: *common
-    container_name: caldera-node
-    volumes:
-      - *mnemonic
-      - *plot1
-      - $APPDATA_PATH/caldera-node:/root/.caldera
-    ports:
-      - '8630:8630'
-      - '8735:8735'
-      - '8623:8623'
-    image: 'caldera:latest'
   cannabis-node:
     <<: *common
     container_name: cannabis-node
@@ -195,18 +183,6 @@ services:
       - '28555:28555'
       - '28447:28447'
     image: 'ghcr.io/sparxalt/hddcoin-docker:latest'
-  inan-node:
-    <<: *common
-    container_name: inan-node
-    volumes:
-      - *mnemonic
-      - *plot1
-      - $APPDATA_PATH/inan-node:/root/.inan
-    ports:
-      - '34448:34448'
-      - '35558:35558'
-      - '37448:37448'
-    image: 'inan:latest'
   kale-node:
     <<: *common
     container_name: kale-node
