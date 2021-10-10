@@ -194,7 +194,7 @@ services:
       - '28444:28444'
       - '28555:28555'
       - '28447:28447'
-    image: 'hddcoin:latest'
+    image: 'ghcr.io/sparxalt/hddcoin-docker:latest'
   inan-node:
     <<: *common
     container_name: inan-node
