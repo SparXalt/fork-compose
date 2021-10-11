@@ -134,7 +134,7 @@ services:
       - '6888:6888'
       - '6755:6755'
       - '6885:6885'
-    image: 'flax:latest'
+    image: 'ghcr.io/sparxalt/flax-docker:latest'
   flora-node:
     <<: *common
     container_name: flora-node

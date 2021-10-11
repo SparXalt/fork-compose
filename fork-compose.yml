@@ -119,7 +119,7 @@ services:
       <<: *env
       farmer_port: '6885'
       ca: '/root/.flax/importca'
-    image: 'ghcr.io/sparxalt/flax-docker:main'
+    image: 'ghcr.io/sparxalt/flax-docker:latest'
   flora:
     restart: *restartpolicy
     container_name: flora
