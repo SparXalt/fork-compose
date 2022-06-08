@@ -81,12 +81,12 @@ services:
     volumes:
       - *mnemonic
       - *plot1
-      - $APPDATA_PATH/chia-node:/data
+      - $APPDATA_PATH/chia-node/chia:/root/.chia
     ports:
       - '8444:8444'
       - '8555:8555'
       - '8447:8447'
-    image: 'ixsystems/chia-docker:latest'
+    image: 'ghcr.io/chia-network/chia:main'
   cryptodoge-node:
     <<: *common
     container_name: cryptodoge-node
